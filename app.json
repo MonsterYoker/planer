@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/shortPlan/shortPlan",
+    "pages/schedule/schedule",
+    "pages/longPlan/longPlan",
+    "pages/addItem/addItem"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#104E8B",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "backgroundColor": "#104E8B",
+    "selectedColor": "#7FFF00",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/short_s.png",
+        "iconPath": "images/short.png",
+        "pagePath": "pages/shortPlan/shortPlan"
+      },
+      {
+        "selectedIconPath": "images/cable_s.png",
+        "iconPath": "images/cable.png",
+        "pagePath": "pages/schedule/schedule"
+      },
+      {
+        "selectedIconPath": "images/long_s.png",
+        "iconPath": "images/long.png",
+        "pagePath": "pages/longPlan/longPlan"
+      }
+    ]
+  }
+}

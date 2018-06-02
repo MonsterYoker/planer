@@ -1,0 +1,45 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.flex-wrap{
+  display: flex;
+  flex-direction: row;
+}
+.flex-wrap2{
+  display: flex;
+  flex-direction: column;
+}
+.flex-bar {
+    padding: 0 0.5rem;
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.flex-bar .flex-bar-in {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+.flex-bar .flex-bar-in .on {
+    border-bottom: 4px solid #de698c;
+}
+.flex-bar .flex-bar-in .li {
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 5px;
+}

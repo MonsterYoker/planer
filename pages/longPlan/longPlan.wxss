@@ -1,0 +1,96 @@
+/* pages/longPlan/longPlan.wxss */
+.card_wrap {
+  position: fixed;
+  background: #f2f2f6;
+}
+.card_item {
+  position: absolute;
+  width: 600rpx;
+  height: 1000rpx;
+  border-radius: 25rpx;
+  box-shadow: 0px 5px 5px #888888;
+}
+
+.card11 {
+  background-image: url('https://attach.bbs.miui.com/forum/201312/17/122529zx2xj2xxojkod8dk.jpg.thumb.jpg');
+  transform: translateY(70rpx) translateX(40rpx);
+  z-index: 3;
+}
+.card12 {
+  background-image: url('http://seopic.699pic.com/photo/50034/9543.jpg_wh1200.jpg');
+  transform: translateY(70rpx) translateX(40rpx);
+  z-index: 3;
+}
+.card13 {
+  background-image: url('http://pic-cdn.35pic.com/58pic/18/22/19/68A58PICbcD_1024.jpg');
+  transform: translateY(70rpx) translateX(40rpx);
+  z-index: 3;
+}
+.card21 {
+  background-image: url('https://attach.bbs.miui.com/forum/201312/17/122529zx2xj2xxojkod8dk.jpg.thumb.jpg');
+  transform: translateY(45rpx) translateX(70rpx);
+  z-index: 2;
+}
+.card22 {
+  background-image: url('http://seopic.699pic.com/photo/50034/9543.jpg_wh1200.jpg');
+  transform: translateY(45rpx) translateX(70rpx);
+  z-index: 2;
+}
+.card23 {
+  background-image: url('http://pic-cdn.35pic.com/58pic/18/22/19/68A58PICbcD_1024.jpg');
+  transform: translateY(45rpx) translateX(70rpx);
+  z-index: 2;
+}
+.card31 {
+  background-image: url('https://attach.bbs.miui.com/forum/201312/17/122529zx2xj2xxojkod8dk.jpg.thumb.jpg');
+  transform: translateY(20rpx) translateX(100rpx);
+  z-index: 1;
+}
+.card32 {
+  background-image: url('http://seopic.699pic.com/photo/50034/9543.jpg_wh1200.jpg');
+  transform: translateY(20rpx) translateX(100rpx);
+  z-index: 1;
+}
+.card33 {
+  background-image: url('http://pic-cdn.35pic.com/58pic/18/22/19/68A58PICbcD_1024.jpg');
+  transform: translateY(20rpx) translateX(100rpx);
+  z-index: 1;
+}
+.card_count {
+  color: #A52A2A;
+  font-size: 48rpx;
+  position: absolute;
+  margin-top: 40rpx;
+  margin-left: 100rpx;
+}
+.card_info {
+  position: absolute;
+  width:85%;
+  margin-top: 300rpx;
+  margin-left: 50rpx;
+  border: 1rpx #FFFAF0 solid;
+  border-radius: 5px;
+}
+.card_info_mes_title {
+  font-size: 20pt;
+  margin-left: 36rpx;
+  position: absolute;
+  top: -100rpx;
+  color: #B2DFEE;
+}
+.card_info_mes_item {
+  position: relative;
+  margin-top: 32rpx;
+  width: 100%;
+  font-size: 12pt;
+  color: #CCCCCC;
+  overflow:auto;  
+  word-break:break-all;
+}
+.help {
+  position: fixed;
+  right: 10rpx;
+  top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

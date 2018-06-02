@@ -1,0 +1,60 @@
+<view class="top">
+  <view wx:for="{{['一','二','三','四','五','六','日']}}" wx:for-index="id" wx:key="sc1" style="color:{{colorArrays[id+1]}};"class="box top-text">周{{item}}</view>
+</view>
+<view>
+  <view style="height:960rpx;width:750rpx;display:flex;" bindlongpress='newCardView'>
+    <view style="background-color:#D2E6B3;color:#7cba23;">
+      <view wx:for="{{['上午','下午','晚上']}}" wx:key="sc2" class="box left">
+        {{item}}
+      </view>
+    </view>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" wx:key="sc3">
+      <view style="width:750rpx;margin-top:{{(index+1)*80}}rpx;  position: absolute;border-bottom:1rpx solid {{index==3 || index==7?'red':'lightgray'}};">
+      </view>
+    </view>
+    <view wx:for="{{[1,2,3,4,5,6]}}" wx:key="sc5">
+      <view style="height:960rpx;margin-left:{{(index+1)*100}}rpx;  position: absolute; border-left: 1rpx solid lightgray;">
+      </view>
+    </view>
+    <view style="left:{{currentDay}}rpx" class="currentDate"></view>
+    <!--课表-->
+    <view wx:for="{{lists}}" wx:key="sc6">
+      <view class="box flex-item kcb-item"
+            catchtap="editCardView"
+            catchlongpress='deleteCardView'
+            data-statu="open"
+            data-index="{{index}}"
+            style="margin-left:{{(item.week)*100}}rpx; margin-top:{{(item.order-1)*80}}rpx; height:152rpx;background-color:{{colorArrays[index%9]}}">
+        <view class="smalltext" >{{item.name}}@{{item.address}}</view>
+      </view>
+    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view wx:if="{{editFlag}}" class="box toast-title">{{multiArray[0][currentLocation[0]]}}，第{{multiArray[1][currentLocation[1]]}}-{{orderArray[currentLocation[1]]}}节</view>
+      <view class="box toast" wx:if="{{editFlag}}">
+        <view class="flex-wrap">
+          <view class="input-title">课程名称：</view>
+          <input class="input" value="{{curIpt1}}" type="text" maxlength="10" placeholder="请输入课程名称"  bindinput='iptChange1'/>
+        </view>
+        <view class="flex-wrap">
+          <view class="input-title">  上课地点：</view>
+          <input class="input" value="{{curIpt2}}" type="text" maxlength="10" placeholder="请输入上课地点" bindinput='iptChange2'/>
+        </view>
+        <view class="flex-row">
+          <button class="btn btn-cancel" formType="reset">取消</button>
+          <button class="btn btn-submit" formType="submit" hover-class="btn-hover">确认</button>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class='tips' bindtap='tipToast'>tips: 点击查看</view>
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="mask modal" wx:if="{{showModal}}">
+  <text class="modalTitle">警告</text>
+  <text class="modalContent">确定删除{{multiArray[0][currentLocation[0]]}}第{{multiArray[1][currentLocation[1]]}}-{{orderArray[currentLocation[1]]}}节的课程吗？</text>
+  <view class="flex-wrap">
+    <button class="modalButton modalCancel" catchtap="cancelDelete">取消</button>
+    <button class="modalButton modalConfirm" catchtap="confirmDelete">确定</button>
+  </view>
+</view> 

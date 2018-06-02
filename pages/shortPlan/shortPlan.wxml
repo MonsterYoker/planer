@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<scroll-view>
+  <view class='box'>
+    <image class='help' src='../../images/help.png' bindtap='help'></image>
+    <view class='text1'>完成进度</view>
+    <progress percent="{{progress}}" show-info="true" active="true" />
+  </view>
+  <view class='box'>
+    <view class="text2">待办事项</view>
+    <view class = "flex-wrap" wx:for="{{todos}}" wx:key="this.id" > 
+      <icon class='icon' bindtap="setDone" data-id="{{item.id}}" type="{{item.done ? 'success_circle' : 'circle'}}" size="24"/>
+      <text class="content_todo" bindtap="edit" data-id ="{{item.id}}">{{item.subject}}</text>
+      <icon class="icon-delete" bindtap="toDelete" data-id="{{item.id}}" type='cancel' size='24'/>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='text3'>完成事项</view>
+    <view class="flex-wrap" wx:for="{{dones}}" wx:key="this.id"> 
+      <icon class='icon' bindtap="setDone" data-id="{{item.id}}" type="{{item.done? 'success_circle' : 'circle'}}" size="24"/>
+      <text class="content_done" data-id ="{{item.id}}">{{item.subject}}</text>
+      <icon class="icon-delete" bindtap="toDelete" data-id="{{item.id}}" type='cancel' size='24' color="#6fa6cf" />
+    </view>
+  </view>
+</scroll-view>
+<image class='add' src='../../images/edit.png' catchtap='add'></image>

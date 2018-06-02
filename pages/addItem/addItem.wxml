@@ -1,0 +1,14 @@
+<view class="background">
+  <view class="title">计划{{order}}</view>
+  <view class="titleBlock subject">主题:</view>
+  <input class="subject-content" placeholder="请输入主题，不能为空" bindblur="iptChange1" value="{{curIpt1}}"></input>
+  <view class="titleBlock content-h">内容:</view>
+  <textarea fixed="true" class="content" placeholder="请输入正文，可以为空" bindblur="iptChange2"  value="{{curIpt2}}" maxlength="-1"></textarea>        
+  <view wx:if="{{inputFinished}}"> 
+    <image src='../../images/reset.png' class="btn-cancel" bindtap="formReset"></image>
+    <view class="textReset">清空输入</view>
+    <image src='../../images/submit.png' class="btn-submit" bindtap="formSubmit"></image>
+    <view class="textSubmit">提交计划</view>
+  </view>
+</view>
+

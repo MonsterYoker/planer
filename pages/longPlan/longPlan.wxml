@@ -1,0 +1,15 @@
+<!--pages/longPlan/longPlan.wxml-->
+<view class="card_wrap">
+  <view wx:for="{{cardInfoList}}"  wx:key="unique" wx:for-index="id" class="card_item card{{ (id + 1)*10 + item.cardUrl}}" bindtap="slidethis" animation="{{id == 0 ? animationData : ''}}">
+    <view class="card_count" catchtap='edit'>
+      <picker mode="date" value="{{item.cardDate}}" start="{{currentDate}}" end = "{{endDate}}" bindchange="bindDateChange" bindcancel="bindChangeCancel">
+        <text>倒计时：{{item.cardCount}}天</text>
+      </picker>
+    </view>
+    <view catchtap='edit' class="card_info">
+      <view class="card_info_mes_title" >{{ item.cardInfo.cardTitle }}</view>
+      <textarea  wx-if="{{item.cardVisual}}" class="card_info_mes_item" value="{{item.cardInfo.cardInfoMes}}" type="text" maxlength="200" placeholder="请输入内容"  bindblur='iptChange' bindconfirm="endEdit"></textarea>
+    </view>
+  </view>
+  <image class='help' src='../../images/help.png' catchtap='help'></image>
+</view>
